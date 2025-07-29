@@ -31,6 +31,30 @@ The goal of this simulation is to mimic that industrial color sorting process on
 - Colored objects (red, green, blue)
 - Optional: physical sorting frame made from popsicle sticks or cardboard
 
+## Wiring Diagram
+
+The following diagram shows the wiring configuration between the Arduino Uno, TCS34725 color sensor, and the servo motor.
+
+![Wiring Diagram](assets/wiring-color.png)
+
+**Wiring Explanation:**
+
+- **TCS34725 Color Sensor**
+  - VCC → 3.3V (or 5V depending on module)
+  - GND → GND
+  - SDA → A4 (on Arduino Uno)
+  - SCL → A5 (on Arduino Uno)
+
+- **Servo Motor**
+  - Signal (Yellow/White) → Digital Pin 9
+  - VCC (Red) → 5V (ensure sufficient power)
+  - GND (Black/Brown) → GND
+
+**Notes:**
+- TCS34725 uses the I2C protocol (SDA/SCL).
+- Ensure all GNDs are connected together (common ground).
+- If using external power for servo, connect GND to Arduino's GND.
+
 ## Functional Logic
 
 ```cpp
